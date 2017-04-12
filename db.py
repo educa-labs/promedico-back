@@ -461,7 +461,7 @@ class DB():
 
         result = {"status": 0, "tags": list()}
         token = jeison["token"]
-
+        print(token)
         self.cur.execute("""SELECT id
                             FROM Usuarios
                             WHERE token = %s;
