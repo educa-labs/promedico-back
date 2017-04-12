@@ -7,7 +7,7 @@ import json
 class DB():
 
     def __init__(self):
-        self.conn = psql.connect("dbname=alemanapp user=felipe \
+        self.conn = psql.connect("dbname=promedico user=felipe \
             password=123abc456 host=localhost port=5432")
         self.cur = self.conn.cursor()
         
@@ -531,7 +531,7 @@ class DB():
 
     def getTags(self):
         self.cur.execute("SELECT * FROM Tags;")
-        ret = {"tags": [{"id": x[0], "titulo": x[1], "puntaje_usuario": x[2], "descripcion": x[3], "meta": x[4], "color": x[5]}  for x in self.cur]}
+        ret = {"tags": [{"id": x[0], "titulo": x[1], "puntaje_usuario": x[2], "descripcion": x[3], "meta": x[4], "color": x[5], "pico": True}  for x in self.cur]}
         ret = ret
         return ret
 
